@@ -9,6 +9,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Simple health check route (no DB, no middleware) to verify the app is up.
+Route::get('/health', function () {
+    return response('OK', 200);
+});
+
 // Auth routes without CSRF
 // NOTE: login/register moved to routes/api.php so they run under the stateless `api` middleware
 
